@@ -24,7 +24,32 @@ public class Hand {
                     break;
                 }
             case "J":
-                if this.Score
+                this.Score+=10;
+                if (this.Score>21 && this.Acecount>0){
+                    this.Acecount--;
+                    this.Score-=10;
+                }
+                break;
+            case "K":
+                this.Score+=10;
+                if (this.Score>21 && this.Acecount>0){
+                    this.Acecount--;
+                    this.Score-=10;
+                }
+                break;
+            case "Q":
+                this.Score+=10;
+                if (this.Score>21 && this.Acecount>0){
+                    this.Acecount--;
+                    this.Score-=10;
+                }
+                break;
+            default:
+                this.Score+=Integer.parseInt(a.getValue());
+                if (this.Score>21 && this.Acecount>0){
+                    this.Acecount--;
+                    this.Score-=10;
+                }
         }
     }
 
@@ -33,6 +58,7 @@ public class Hand {
     }
 
     public getScore(){
+        return this.Score;
 
     }
 }
