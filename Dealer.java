@@ -1,15 +1,15 @@
 import java.util.List;
 
-public class Dealer {
+public class Dealer extends People{
     private Hand hand;
     private Deck deck;
 
     public Dealer(Deck deck) {
-        this.hand = new Hand();
+        super();
         this.deck = deck;
     }
 
-    public void dealCard(Player player) {
+    public void dealCard(People player) {
         Card card = deck.drawCard();
         player.getHand().addCard(card);
     }

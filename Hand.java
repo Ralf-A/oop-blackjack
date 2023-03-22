@@ -57,7 +57,7 @@ public class Hand {
         return Hand;
     }
 
-    public getScore(){
+    public int getScore(){
         return this.Score;
 
     }
