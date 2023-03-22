@@ -19,16 +19,16 @@ public class Card {
         String cardName = "";
 
         switch (value) {
-            case "1":
+            case "A":
                 cardName = "Ace";
                 break;
-            case "11":
+            case "P":
                 cardName = "Jack";
                 break;
-            case "12":
+            case "Q":
                 cardName = "Queen";
                 break;
-            case "13":
+            case "K":
                 cardName = "King";
                 break;
             default:
