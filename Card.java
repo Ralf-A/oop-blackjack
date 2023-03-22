@@ -1,8 +1,8 @@
 public class Card {
     private String suit;
-    private int value;
+    private String value;
 
-    public Card(String suit, int value) {
+    public Card(String suit, String value) {
         this.suit = suit;
         this.value = value;
     }
@@ -11,7 +11,7 @@ public class Card {
         return suit;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 
@@ -19,20 +19,20 @@ public class Card {
         String cardName = "";
 
         switch (value) {
-            case 1:
+            case "1":
                 cardName = "Ace";
                 break;
-            case 11:
+            case "11":
                 cardName = "Jack";
                 break;
-            case 12:
+            case "12":
                 cardName = "Queen";
                 break;
-            case 13:
+            case "13":
                 cardName = "King";
                 break;
             default:
-                cardName = Integer.toString(value);
+                cardName = (value);
                 break;
         }
 
