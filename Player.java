@@ -14,4 +14,12 @@ public class Player extends People{
     public Hand getHand() {
         return hand;
     }
+
+    public String getNimi() {
+        return nimi;
+    }
+
+    public Float getBalance() {
+        return balance;
+    }
 }
