@@ -19,10 +19,6 @@ public class Player{
         return balance;
     }
 
-    public void setNimi(String nimi) {
-        this.nimi = nimi;
-    }
-
     public void setBalance(Float balance) {
         this.balance = balance;
     }

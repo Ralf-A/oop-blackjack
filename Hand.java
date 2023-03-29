@@ -13,6 +13,7 @@ public class Hand {
         return Hand;
     }
 
+// adds a card to players hand. If card is an ace then also updates acecount
     public void add(Card a){
         if (a.getValue().equals("A")){
             Acecount++;
@@ -24,9 +25,6 @@ public class Hand {
         return Acecount;
     }
 
-    public void setAcecount(int acecount) {
-        Acecount = acecount;
-    }
 
     @Override
     public String toString() {
