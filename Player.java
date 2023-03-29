@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public class Player extends People{
-    private String nimi;
+    private String name;
     private Hand hand;
     private Float balance;
 
-    public Player(String nimi, ArrayList<String>[] hand, Float balance) {
+    public Player(String name, ArrayList<String>[] hand, Float balance) {
         super();
-        this.nimi = nimi;
+        this.name = name;
         this.balance = balance;
     }
 
@@ -15,11 +15,14 @@ public class Player extends People{
         return hand;
     }
 
-    public String getNimi() {
-        return nimi;
+    public String getName() {
+        return name;
     }
 
     public Float getBalance() {
         return balance;
     }
-}
+
+
+    }
+
