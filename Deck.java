@@ -8,7 +8,7 @@ public class Deck {
     public Deck() {
         ArrayList<Card> vahe= new ArrayList<Card>(0);
         String[] suits = {"S","H","C","D"};
-        String[] values = {"2","3","4","5","6","7","8","9","10","P","Q","K","A"};
+        String[] values = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
         for (String suit: suits) {
             for (String value : values) {
                 vahe.add(new Card(suit,value));
