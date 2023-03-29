@@ -11,4 +11,13 @@ public class Hand {
     public ArrayList<Card> getHand() {
         return Hand;
     }
+
+    @Override
+    public String toString() {
+        String cards = "";
+        for (Card card:Hand) {
+            cards+=card+"";
+        }
+        return cards;
+    }
 }
