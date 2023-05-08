@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
@@ -24,7 +25,15 @@ public class BlackjackGame {
         }
         Player player = new Player(name, balance);
         while(player.getBalance() > 0) { // While player has balance > 0, can start game
-            new BlackjackGame().startGame(player);
+            System.out.println("do you want to continue?(Y/N)");
+            String input = scanner.nextLine();
+            if (input.equals("Y")) {
+                new BlackjackGame().startGame(player);
+            } else if (input.equals("N")){
+                players.put(name,balance);
+                FileReader.WriteFile("players.dat",players);
+                break;
+            }
         }
     }
 
