@@ -20,9 +20,9 @@ public class Player{
     }
 
     public void setBalance(Float balance) throws NegativeBalanceError {
-        this.balance = balance;
         if (balance < 0) {
             throw new NegativeBalanceError("balance can't be below 0");
         }
+        this.balance = balance;
     }
 }
