@@ -1,4 +1,6 @@
+import java.io.IOException;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Scanner;
 
 public class BlackjackGame {
@@ -8,12 +10,18 @@ public class BlackjackGame {
         deck = new Deck();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        float balance;
+        Map<String, Float> players = FileReader.ReadFile("players.dat");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter your name: ");
         String name = scanner.nextLine();
-        System.out.print("Please enter your bank balance: ");
-        float balance = Float.parseFloat(scanner.nextLine());
+        if (players.containsKey(name)){
+            balance = players.get(name);
+        } else {
+            System.out.print("Please enter your bank balance: ");
+            balance = Float.parseFloat(scanner.nextLine());
+        }
         Player player = new Player(name, balance);
         while(player.getBalance() > 0) { // While player has balance > 0, can start game
             new BlackjackGame().startGame(player);
