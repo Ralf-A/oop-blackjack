@@ -26,7 +26,16 @@ public class BlackjackGame {
         int dealerScore = 0;
         System.out.print("Please enter your wager: ");
         float bet = Float.parseFloat(scanner.nextLine());
-        player1.setBalance(player1.getBalance() - bet); // Remove bet from player's balance
+        while (true){
+            try {
+                player1.setBalance(player1.getBalance() - bet); // Remove bet from player's balance
+                break;
+            } catch (NegativeBalanceError e) {
+                System.out.println(e.getMessage());
+                System.out.print("Please enter your wager: ");
+                bet = Float.parseFloat(scanner.nextLine());
+            }
+        }
         deck.shuffle(); // Shuffle the deck and deal two cards to each player and the dealer
         Hand dealerHand = new Hand(); // Creates instance for dealer's hand
         dealerHand.add(deck.drawCard()); // Add one card to dealer
@@ -71,12 +80,17 @@ public class BlackjackGame {
         }
         if (dealerScore < playerScore && playerScore <= 21){ // Player has more than dealer and their score is less or 21
             System.out.println("Player has won the game!");
-            player1.setBalance(player1.getBalance() + 2*bet);
-            System.out.println("Player's " + player1.getNimi() + " balance is now: " + player1.getBalance());
+            try {
+                player1.setBalance(player1.getBalance() + 2*bet); // Remove bet from player's balance
+            } catch (NegativeBalanceError e){
+            }            System.out.println("Player's " + player1.getNimi() + " balance is now: " + player1.getBalance());
         }
         if (dealerScore == playerScore){ // Player and dealer tied the game
             System.out.println("It is a push!");
-            player1.setBalance(player1.getBalance() + bet);
+            try {
+                player1.setBalance(player1.getBalance() + bet); // Remove bet from player's balance
+            } catch (NegativeBalanceError e){
+            }
             System.out.println("Player's " + player1.getNimi() + " balance is now: " + player1.getBalance());
         }
         if (dealerScore > playerScore && dealerScore <= 21){ // Dealer has more than player and their score is less than 21
